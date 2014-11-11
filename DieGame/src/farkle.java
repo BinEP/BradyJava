@@ -193,6 +193,19 @@ public class farkle extends JPanel {
 										});
 										btnQuit.setBounds(206, 34, 117, 29);
 										panel_1.add(btnQuit);
+										
+												panel_3 = new JPanel();
+												panel_3.setVisible(false);
+												panel_3.setBounds(6, 6, 893, 625);
+												add(panel_3);
+												panel_3.setLayout(null);
+												
+														JLabel lblNewLabel = new JLabel("");
+														lblNewLabel
+																.setIcon(new ImageIcon(
+																		"/Users/88713791/Desktop/Screen Shots/Screen Shot 2014-11-06 at 2.03.54 PM copy 2.png"));
+														lblNewLabel.setBounds(0, 0, 890, 625);
+														panel_3.add(lblNewLabel);
 		btnStartGame.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -206,19 +219,6 @@ public class farkle extends JPanel {
 			}
 
 		});
-
-		panel_3 = new JPanel();
-		panel_3.setVisible(false);
-		panel_3.setBounds(6, 6, 893, 625);
-		add(panel_3);
-		panel_3.setLayout(null);
-
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel
-				.setIcon(new ImageIcon(
-						"/Users/88713791/Desktop/Screen Shots/Screen Shot 2014-11-06 at 2.03.54 PM copy 2.png"));
-		lblNewLabel.setBounds(0, 0, 890, 625);
-		panel_3.add(lblNewLabel);
 
 		setVisible(true);
 
@@ -264,6 +264,7 @@ public class farkle extends JPanel {
 		*/
 		
 		panel_2.setVisible(false);
+		
 		//panel.setVisible(true);
 		panel_1.setVisible(true);
 		
@@ -294,7 +295,7 @@ public class farkle extends JPanel {
 
 		// panel.setVisible(false);
 		// panel.setVisible(false);
-		
+		panel.setVisible(false);
 		panel_3.setVisible(true);
 		// panel.setVisible(false);
 		// frame.getContentPane().add(panel_3);
@@ -306,6 +307,7 @@ public class farkle extends JPanel {
 	void farklePanelHide() {
 		
 		panel_3.setVisible(false);
+		
 		//panel_1.setVisible(true);
 		//panel_2.setVisible(false);
 		//panel_3.setVisible(false);
@@ -665,9 +667,9 @@ public class farkle extends JPanel {
 		if (total == subTotal) {
 			dice.done = false;
 			System.out.println("Farkle!");
-			//farklePanel();
-			//Thread.sleep(700);
-			//farklePanelHide();
+			farklePanel();
+			Thread.sleep(700);
+			farklePanelHide();
 			//Thread.sleep(700);
 			dice.totalV = 0;
 		} else {
