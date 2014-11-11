@@ -70,6 +70,7 @@ public class farkle extends JPanel {
 	private JTextField textField_1;
 	private JTextField textField;
 	private JPanel panel_1;
+	private JPanel panel;
 	private JPanel panel_2;
 	private JPanel panel_3;
 	private JFrame frame;
@@ -103,10 +104,15 @@ public class farkle extends JPanel {
 			}
 		});
 		add(btnBankPoints);
+		
+		panel = new JPanel();
+		panel.setBounds(240, 170, 408, 289);
+		add(panel);
+		panel.setLayout(null);
 
 		panel_2 = new JPanel();
-		panel_2.setBounds(380, 170, 134, 289);
-		add(panel_2);
+		panel_2.setBounds(140, 0, 134, 289);
+		panel.add(panel_2);
 		panel_2.setLayout(null);
 
 		JLabel lblHowManyPlayers = new JLabel("How many Players?");
@@ -148,6 +154,45 @@ public class farkle extends JPanel {
 		chckbxSortedDice.setSelected(true);
 		chckbxSortedDice.setBounds(6, 249, 128, 23);
 		panel_2.add(chckbxSortedDice);
+		
+				panel_1 = new JPanel();
+				panel_1.setBounds(0, 80, 408, 76);
+				panel.add(panel_1);
+				panel_1.setVisible(false);
+				panel_1.setLayout(null);
+				
+						JLabel lblYouWon = new JLabel("You Won!!!!");
+						lblYouWon.setHorizontalAlignment(SwingConstants.CENTER);
+						lblYouWon.setBounds(153, 6, 96, 16);
+						panel_1.add(lblYouWon);
+						
+								JButton btnPlayAgain = new JButton("Play Again");
+								btnPlayAgain.addMouseListener(new MouseAdapter() {
+									@Override
+									public void mouseClicked(MouseEvent e) {
+										newGameClick = true;
+										
+										//panel.setVisible(false);
+										
+										panel_1.setVisible(false);
+
+									}
+								});
+								btnPlayAgain.setBounds(77, 34, 117, 29);
+								panel_1.add(btnPlayAgain);
+								
+										JButton btnQuit = new JButton("Quit");
+										btnQuit.addMouseListener(new MouseAdapter() {
+											@Override
+											public void mouseClicked(MouseEvent e) {
+												endGameClick = true;
+												panel.setVisible(false);
+												panel_1.setVisible(false);
+
+											}
+										});
+										btnQuit.setBounds(206, 34, 117, 29);
+										panel_1.add(btnQuit);
 		btnStartGame.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -155,47 +200,12 @@ public class farkle extends JPanel {
 				players = Integer.parseInt(textField.getText());
 				playTo = Integer.parseInt(textField_1.getText());
 
-				
+				//panel.setVisible(false);
 				panel_2.setVisible(false);
 				playing = false;
 			}
 
 		});
-
-		panel_1 = new JPanel();
-		panel_1.setVisible(false);
-		panel_1.setBounds(240, 250, 408, 76);
-		add(panel_1);
-		panel_1.setLayout(null);
-
-		JLabel lblYouWon = new JLabel("You Won!!!!");
-		lblYouWon.setHorizontalAlignment(SwingConstants.CENTER);
-		lblYouWon.setBounds(153, 6, 96, 16);
-		panel_1.add(lblYouWon);
-
-		JButton btnPlayAgain = new JButton("Play Again");
-		btnPlayAgain.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				newGameClick = true;
-				panel_1.setVisible(false);
-
-			}
-		});
-		btnPlayAgain.setBounds(77, 34, 117, 29);
-		panel_1.add(btnPlayAgain);
-
-		JButton btnQuit = new JButton("Quit");
-		btnQuit.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				endGameClick = true;
-				panel_1.setVisible(false);
-
-			}
-		});
-		btnQuit.setBounds(206, 34, 117, 29);
-		panel_1.add(btnQuit);
 
 		panel_3 = new JPanel();
 		panel_3.setVisible(false);
@@ -252,7 +262,15 @@ public class farkle extends JPanel {
 		panel_3.setVisible(false);
 		panel_1.setVisible(true);
 		*/
+		
+		panel_2.setVisible(false);
+		//panel.setVisible(true);
 		panel_1.setVisible(true);
+		
+		
+		
+		
+		
 
 		//1game.repaint();
 		//panel_2.setVisible(false);
@@ -312,6 +330,8 @@ public class farkle extends JPanel {
 		panel_1.setVisible(false);
 
 		panel_2.setVisible(true);
+		
+		
 
 
 		//frame.validate();
@@ -330,8 +350,8 @@ public class farkle extends JPanel {
 
 		theGame.frame.setSize(865, 1000);
 		theGame.frame.getContentPane().add(game);
-		theGame.frame.getContentPane().add(theGame.panel_1);
-		theGame.frame.getContentPane().add((theGame.panel_2));
+		theGame.frame.getContentPane().add(theGame.panel);
+		theGame.frame.getContentPane().add((theGame.panel));
 		theGame.frame.getContentPane().add(theGame.panel_3);
 		theGame.frame.getContentPane().setLayout(null);
 
@@ -550,7 +570,8 @@ public class farkle extends JPanel {
 		System.out.println("Want to play again? yes: y, no: n");
 
 		Thread.sleep(1000);
-		// panel.setVisible(true);
+		
+		panel.setVisible(true);
 		//panel_1.setVisible(true);
 		playAgainPanel();
 		//panel_1.setVisible(true);
@@ -644,10 +665,10 @@ public class farkle extends JPanel {
 		if (total == subTotal) {
 			dice.done = false;
 			System.out.println("Farkle!");
-			farklePanel();
-			Thread.sleep(700);
-			farklePanelHide();
-			Thread.sleep(700);
+			//farklePanel();
+			//Thread.sleep(700);
+			//farklePanelHide();
+			//Thread.sleep(700);
 			dice.totalV = 0;
 		} else {
 			total = subTotal;
