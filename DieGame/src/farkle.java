@@ -262,7 +262,7 @@ public class farkle extends JPanel {
 		panel_3.setVisible(false);
 		panel_1.setVisible(true);
 		*/
-		
+		panel.setVisible(true);
 		panel_2.setVisible(false);
 		
 		//panel.setVisible(true);
@@ -592,6 +592,7 @@ public class farkle extends JPanel {
 			playAgainSetup();
 
 		}
+		
 		return newGameClick;
 
 	}
