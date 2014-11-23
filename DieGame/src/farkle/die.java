@@ -1,3 +1,4 @@
+package farkle;
 //import java.util.Random;
 
 

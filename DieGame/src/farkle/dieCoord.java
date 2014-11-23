@@ -1,3 +1,4 @@
+package farkle;
 import java.awt.Point;
 //import java.util.Scanner;
 import java.awt.Canvas;

@@ -1,6 +1,4 @@
-/Screen Shot 2014-11-06 at 12.31.00 PM.png
 /die.class
-/dieCoord.class
 /farkle$1.class
 /farkle$2.class
 /farkle$3.class
@@ -8,9 +6,5 @@
 /farkle$5.class
 /farkle$6.class
 /farkle$7.class
-/farkle.class
-/farkleTest.class
-/farkleWin$1.class
-/farkleWin$SwingAction.class
-/farkleWin$SwingAction_1.class
-/farkleWin.class
+/dieCoord.class
+/farkle/
